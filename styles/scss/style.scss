@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 img {
   width: 100%;
 }
@@ -47,51 +52,56 @@ section.main-page {
     height: 83vh;
     overflow: hidden;
 
-    #banner-1,#banner-2,#banner-3,#banner-4{
+    #banner-1,
+    #banner-2,
+    #banner-3,
+    #banner-4 {
       z-index: -9999;
-      width: 100%;
+      // max-width: auto;
+      width: auto;
       height: 100%;
+      transform: translateY(0);
       overflow: hidden;
       transition: width 2s;
     }
 
-    #banner-1{
+    #banner-1 {
       @include anim(rightToLeft1, 10s, 0s, infinite);
     }
 
-    #banner-2{
+    #banner-2 {
       @include anim(rightToLeft2, 10s, 0s, infinite);
     }
 
     @keyframes rightToLeft1 {
       0% {
         z-index: -9998;
-        transform: translateY(0) matrix(1.1, 0, 0, 1.1, 0, 0);
+        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
         width: 0px;
       }
-      50%{
+      50% {
         z-index: -9998;
-        transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+        transform: translateY(0) matrix(1.8, 0, 0, 1.8 0, 0);
         width: 100%;
       }
-      51%{
+      51% {
         z-index: -9999;
-        transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+        transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
         width: 100%;
       }
       97% {
         z-index: -9999;
-        transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+        transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
         width: 100%;
       }
       98% {
         z-index: -9999;
-        transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+        transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
         width: 0px;
       }
       100% {
         z-index: -9998;
-        transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+        transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
         width: 0px;
       }
     }
@@ -102,20 +112,20 @@ section.main-page {
         width: 100%;
         transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
       }
-      49%{
+      49% {
         z-index: -9999;
         width: 100%;
-        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0,0);
+        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
       }
       50% {
         z-index: -9999;
         width: 0px;
-        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0,0);
+        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
       }
       51% {
         z-index: -9998;
         width: 0px;
-        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0,0);
+        transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
       }
       98% {
         z-index: -9998;
@@ -136,7 +146,7 @@ section.main-page {
 
     .carousel-banner {
       position: absolute;
-      img{
+      img {
         width: auto;
         height: 100%;
       }
@@ -235,6 +245,7 @@ section.main-page {
 section#selected-works {
   padding-top: 77px;
   margin-bottom: 172px;
+  overflow: hidden;
   .works-title {
     margin-left: 80px;
     margin-bottom: 62px;
@@ -243,8 +254,8 @@ section#selected-works {
     letter-spacing: 0.5px;
   }
   .works-box {
+    position: relative;
     margin-bottom: 86px;
-    overflow: hidden;
 
     .works-list-title {
       margin-left: 80px;
@@ -262,6 +273,37 @@ section#selected-works {
         display: inline-block;
         vertical-align: top;
         letter-spacing: 1.4px;
+      }
+    }
+
+    .worksList {
+      display: flex;
+      width: 10000px;
+      @include anim(carouselBanner, 20s, 0s, infinite);
+      // position: relative;
+      // transform: translatex(0%);
+      .banner-park-box {
+        flex: 0 0 auto;
+        height: 200px;
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      &:hover{
+        animation-play-state: paused;
+    }
+
+      @keyframes carouselBanner {
+        0% {
+          // left: 0;
+          transform: translateX(0);
+        }
+        100% {
+          // left: -100%;
+          transform: translateX(-5000px);
+        }
       }
     }
   }

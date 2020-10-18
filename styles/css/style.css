@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box; }
 
+html,
+body {
+  scroll-behavior: smooth; }
+
 img {
   width: 100%; }
 
@@ -36,10 +40,14 @@ section.main-page {
     margin-left: 13.7vw;
     height: 83vh;
     overflow: hidden; }
-    section.main-page .carousel #banner-1, section.main-page .carousel #banner-2, section.main-page .carousel #banner-3, section.main-page .carousel #banner-4 {
+    section.main-page .carousel #banner-1,
+    section.main-page .carousel #banner-2,
+    section.main-page .carousel #banner-3,
+    section.main-page .carousel #banner-4 {
       z-index: -9999;
-      width: 100%;
+      width: auto;
       height: 100%;
+      transform: translateY(0);
       overflow: hidden;
       transition: width 2s; }
     section.main-page .carousel #banner-1 {
@@ -49,27 +57,27 @@ section.main-page {
 @keyframes rightToLeft1 {
   0% {
     z-index: -9998;
-    transform: translateY(0) matrix(1.1, 0, 0, 1.1, 0, 0);
+    transform: translateY(0) matrix(1.5, 0, 0, 1.5, 0, 0);
     width: 0px; }
   50% {
     z-index: -9998;
-    transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+    transform: translateY(0) matrix(1.8, 0, 0, 1.8 0, 0);
     width: 100%; }
   51% {
     z-index: -9999;
-    transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+    transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
     width: 100%; }
   97% {
     z-index: -9999;
-    transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+    transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
     width: 100%; }
   98% {
     z-index: -9999;
-    transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+    transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
     width: 0px; }
   100% {
     z-index: -9998;
-    transform: translateY(0) matrix(1.2, 0, 0, 1.2, 0, 0);
+    transform: translateY(0) matrix(1.8, 0, 0, 1.8, 0, 0);
     width: 0px; } }
 @keyframes rightToLeft2 {
   0% {
@@ -161,7 +169,8 @@ section.main-page {
 
 section#selected-works {
   padding-top: 77px;
-  margin-bottom: 172px; }
+  margin-bottom: 172px;
+  overflow: hidden; }
   section#selected-works .works-title {
     margin-left: 80px;
     margin-bottom: 62px;
@@ -169,8 +178,8 @@ section#selected-works {
     font-weight: 400;
     letter-spacing: 0.5px; }
   section#selected-works .works-box {
-    margin-bottom: 86px;
-    overflow: hidden; }
+    position: relative;
+    margin-bottom: 86px; }
     section#selected-works .works-box .works-list-title {
       margin-left: 80px;
       margin-bottom: 22px;
@@ -186,6 +195,23 @@ section#selected-works {
         display: inline-block;
         vertical-align: top;
         letter-spacing: 1.4px; }
+    section#selected-works .works-box .worksList {
+      display: flex;
+      width: 10000px;
+      animation: carouselBanner 20s 0s infinite none; }
+      section#selected-works .works-box .worksList .banner-park-box {
+        flex: 0 0 auto;
+        height: 200px; }
+        section#selected-works .works-box .worksList .banner-park-box img {
+          width: auto;
+          height: 100%; }
+      section#selected-works .works-box .worksList:hover {
+        animation-play-state: paused; }
+@keyframes carouselBanner {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-5000px); } }
   section#selected-works .select-more {
     text-align: center; }
     section#selected-works .select-more a {
