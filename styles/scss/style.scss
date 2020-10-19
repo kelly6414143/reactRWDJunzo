@@ -23,6 +23,11 @@ a {
   transition: opacity 0.6s ease;
 }
 
+ol,
+ul {
+  list-style: none;
+}
+
 .-notoSerif {
   font-family: "Roboto", sans-serif;
 }
@@ -245,7 +250,6 @@ section.main-page {
 section#selected-works {
   padding-top: 77px;
   margin-bottom: 172px;
-  overflow: hidden;
   .works-title {
     margin-left: 80px;
     margin-bottom: 62px;
@@ -256,6 +260,7 @@ section#selected-works {
   .works-box {
     position: relative;
     margin-bottom: 86px;
+    overflow: hidden;
 
     .works-list-title {
       margin-left: 80px;
@@ -278,12 +283,10 @@ section#selected-works {
 
     .worksList {
       display: flex;
-      width: 10000px;
+      width: 6000px;
       @include anim(carouselBanner, 20s, 0s, infinite);
-      // position: relative;
-      // transform: translatex(0%);
-      .banner-park-box {
-        flex: 0 0 auto;
+      .banner-box {
+        width: 300px;
         height: 200px;
         img {
           width: auto;
@@ -291,18 +294,16 @@ section#selected-works {
         }
       }
 
-      &:hover{
+      &:hover {
         animation-play-state: paused;
-    }
+      }
 
       @keyframes carouselBanner {
         0% {
-          // left: 0;
           transform: translateX(0);
         }
         100% {
-          // left: -100%;
-          transform: translateX(-5000px);
+          transform: translateX(-3000px);
         }
       }
     }
@@ -356,6 +357,94 @@ section#selected-works {
         height: 9px;
         left: 4px;
       }
+    }
+  }
+}
+
+section.atelier-page {
+  display: flex;
+  padding: 43px 0 43px 43px;
+  align-items: center;
+  box-sizing: border-box;
+  .atelier-right {
+    padding: 0 7.5% 0 7.5%;
+    flex: 1;
+    box-sizing: border-box;
+    .atelier-intro {
+      margin-bottom: 30px;
+      .atelier-title {
+        margin-bottom: 40px;
+        font-size: 36px;
+        font-weight: 200;
+        line-height: 40px;
+      }
+      span {
+        margin-top: 5px;
+        margin-left: -2px;
+        display: block;
+        font-size: 16px;
+        letter-spacing: 4.9px;
+        font-family: "Noto Sans JP", sans-serif;
+      }
+      .atelier-content {
+        margin-left: -3px;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+        line-height: 2.2;
+      }
+    }
+    .atelier-menu {
+      li {
+        padding: 33px 0 0;
+        position: relative;
+        box-sizing: border-box;
+        span {
+          margin-left: -1px;
+          display: inline-block;
+          font-size: 25px;
+          line-height: 1.2;
+          font-weight: 300;
+        }
+        p {
+          margin-top: 3px;
+          display: block;
+          float: right;
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+        &:hover:after {
+          bottom: -5px;
+          height: 6px;
+        }
+        &:after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background-color: #030000;
+          transition: height 0.25s ease, bottom 0.25s ease;
+        }
+      }
+    }
+  }
+  .atelier-left {
+    flex: 0 0 49%;
+  }
+}
+
+footer {
+  padding: 20px 25px 20px 35px;
+  box-sizing: border-box;
+  margin-top: -109px;
+  .footer-right {
+    float: right;
+    text-align: right;
+    .top-arrow {
+      width: 25px;
+      margin-bottom: 28px;
+      display: inline-block;
     }
   }
 }

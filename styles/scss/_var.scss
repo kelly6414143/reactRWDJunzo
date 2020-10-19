@@ -40,9 +40,10 @@ $bigDestop: 1280px;
   $duration: 0s,
   $delay: 0s,
   $iterationCount: 1,
+  $animation-timing-function: linear,
   $fillMode: none
 ) {
-  animation: $name $duration $delay $iterationCount $fillMode;
+  animation: $name $duration $delay $iterationCount $animation-timing-function $fillMode;
 }
 
 @mixin text-list($num) {

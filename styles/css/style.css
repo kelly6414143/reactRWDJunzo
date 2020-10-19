@@ -17,6 +17,10 @@ a {
   text-decoration: none;
   transition: opacity 0.6s ease; }
 
+ol,
+ul {
+  list-style: none; }
+
 .-notoSerif {
   font-family: "Roboto", sans-serif; }
 
@@ -51,9 +55,9 @@ section.main-page {
       overflow: hidden;
       transition: width 2s; }
     section.main-page .carousel #banner-1 {
-      animation: rightToLeft1 10s 0s infinite none; }
+      animation: rightToLeft1 10s 0s infinite linear none; }
     section.main-page .carousel #banner-2 {
-      animation: rightToLeft2 10s 0s infinite none; }
+      animation: rightToLeft2 10s 0s infinite linear none; }
 @keyframes rightToLeft1 {
   0% {
     z-index: -9998;
@@ -169,8 +173,7 @@ section.main-page {
 
 section#selected-works {
   padding-top: 77px;
-  margin-bottom: 172px;
-  overflow: hidden; }
+  margin-bottom: 172px; }
   section#selected-works .works-title {
     margin-left: 80px;
     margin-bottom: 62px;
@@ -179,7 +182,8 @@ section#selected-works {
     letter-spacing: 0.5px; }
   section#selected-works .works-box {
     position: relative;
-    margin-bottom: 86px; }
+    margin-bottom: 86px;
+    overflow: hidden; }
     section#selected-works .works-box .works-list-title {
       margin-left: 80px;
       margin-bottom: 22px;
@@ -197,12 +201,12 @@ section#selected-works {
         letter-spacing: 1.4px; }
     section#selected-works .works-box .worksList {
       display: flex;
-      width: 10000px;
-      animation: carouselBanner 20s 0s infinite none; }
-      section#selected-works .works-box .worksList .banner-park-box {
-        flex: 0 0 auto;
+      width: 6000px;
+      animation: carouselBanner 20s 0s infinite linear none; }
+      section#selected-works .works-box .worksList .banner-box {
+        width: 300px;
         height: 200px; }
-        section#selected-works .works-box .worksList .banner-park-box img {
+        section#selected-works .works-box .worksList .banner-box img {
           width: auto;
           height: 100%; }
       section#selected-works .works-box .worksList:hover {
@@ -211,7 +215,7 @@ section#selected-works {
   0% {
     transform: translateX(0); }
   100% {
-    transform: translateX(-5000px); } }
+    transform: translateX(-3000px); } }
   section#selected-works .select-more {
     text-align: center; }
     section#selected-works .select-more a {
@@ -252,5 +256,76 @@ section#selected-works {
         width: 1px;
         height: 9px;
         left: 4px; }
+
+section.atelier-page {
+  display: flex;
+  padding: 43px 0 43px 43px;
+  align-items: center;
+  box-sizing: border-box; }
+  section.atelier-page .atelier-right {
+    padding: 0 7.5% 0 7.5%;
+    flex: 1;
+    box-sizing: border-box; }
+    section.atelier-page .atelier-right .atelier-intro {
+      margin-bottom: 30px; }
+      section.atelier-page .atelier-right .atelier-intro .atelier-title {
+        margin-bottom: 40px;
+        font-size: 36px;
+        font-weight: 200;
+        line-height: 40px; }
+      section.atelier-page .atelier-right .atelier-intro span {
+        margin-top: 5px;
+        margin-left: -2px;
+        display: block;
+        font-size: 16px;
+        letter-spacing: 4.9px;
+        font-family: "Noto Sans JP", sans-serif; }
+      section.atelier-page .atelier-right .atelier-intro .atelier-content {
+        margin-left: -3px;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+        line-height: 2.2; }
+    section.atelier-page .atelier-right .atelier-menu li {
+      padding: 33px 0 0;
+      position: relative;
+      box-sizing: border-box; }
+      section.atelier-page .atelier-right .atelier-menu li span {
+        margin-left: -1px;
+        display: inline-block;
+        font-size: 25px;
+        line-height: 1.2;
+        font-weight: 300; }
+      section.atelier-page .atelier-right .atelier-menu li p {
+        margin-top: 3px;
+        display: block;
+        float: right;
+        font-size: 12px;
+        letter-spacing: 1px; }
+      section.atelier-page .atelier-right .atelier-menu li:hover:after {
+        bottom: -5px;
+        height: 6px; }
+      section.atelier-page .atelier-right .atelier-menu li:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #030000;
+        transition: height 0.25s ease, bottom 0.25s ease; }
+  section.atelier-page .atelier-left {
+    flex: 0 0 49%; }
+
+footer {
+  padding: 20px 25px 20px 35px;
+  box-sizing: border-box;
+  margin-top: -109px; }
+  footer .footer-right {
+    float: right;
+    text-align: right; }
+    footer .footer-right .top-arrow {
+      width: 25px;
+      margin-bottom: 28px;
+      display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */
